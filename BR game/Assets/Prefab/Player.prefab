@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23336826080506070}
   - component: {fileID: 65183067273419448}
   m_Layer: 0
-  m_Name: cam
+  m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

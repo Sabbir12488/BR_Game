@@ -122,7 +122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769261599221728}
   m_LocalRotation: {x: -0, y: 0.9997354, z: -0, w: 0.023003815}
-  m_LocalPosition: {x: -18.585936, y: 4.55, z: 12.489858}
+  m_LocalPosition: {x: -1.21, y: 0.57, z: 9.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4245410908581510}
@@ -482,6 +482,8 @@ MonoBehaviour:
   mouseYInputName: Mouse Y
   mouseSensitivity: 150
   playerBody: {fileID: 4069293305577974}
+  cam: {fileID: 20253181721733250}
+  focus: {fileID: 0}
 --- !u!143 &143963101710727426
 CharacterController:
   m_ObjectHideFlags: 1

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class playerLook : MonoBehaviour {
@@ -8,6 +9,10 @@ public class playerLook : MonoBehaviour {
     [SerializeField] private float mouseSensitivity;
 
     [SerializeField] private Transform playerBody;
+
+    public Camera cam;
+
+    public Interactable focus;
 
     private float xAxisClamp;
 
@@ -24,12 +29,68 @@ public class playerLook : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-    {
+    {       
+
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         CameraRotation();
+
+        /// for test start
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(Time.timeScale == 0f)
+            {
+                Time.timeScale = 1f;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                //Cursor.lockState = CursorLockMode.None;
+            }
+        }
+        /// for test ends
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // creats a ray
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit, 100))
+            {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                if(interactable != null)
+                {
+                    SetFocus(interactable);
+                }
+            }
+        }
+    }
+
+    void SetFocus(Interactable newFocus)
+    {
+        if(newFocus != focus)
+        {
+            if(focus != null)
+            {
+                focus.OnDefocused();
+            }           
+            focus = newFocus;
+        }
+       
+        newFocus.OnFocused(transform);
     }
 
     void CameraRotation()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
+
         float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis(mouseYInputName) * mouseSensitivity * Time.deltaTime;
 

@@ -30,11 +30,13 @@ public class playerMovement : MonoBehaviour {
 
     void PlayerMovement()
     {
+        
         // moving forward and backward moving right and left
         float verInput = Input.GetAxis(verticalInputName);
         float horizInput = Input.GetAxis(horizonlatInputName);
 
         Vector3 forwardMove = transform.forward * verInput;  
+
         //Vector3 rightMove = transform.right * horizInput;   
 
         controller.SimpleMove(Vector3.ClampMagnitude(forwardMove /*+ rightMove*/, 1f) * moveSpeed);

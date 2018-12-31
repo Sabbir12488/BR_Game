@@ -9,7 +9,8 @@ public class Profile : MonoBehaviour {
     public float health = 100f;
     public float shield = 100f;
     public bool takenDamage = false;
-    public Text deathscreen; 
+    public Text deathscreen;
+    public float addedDamaged; 
 
     [SerializeField]private Image healthImage;
     [SerializeField]private Image shieldImage;
@@ -23,6 +24,9 @@ public class Profile : MonoBehaviour {
 	void Update () {
         healthImage.fillAmount = health / 100;
         shieldImage.fillAmount = shield / 100;
+        addedDamaged = GetComponent<playerMovement>().moveSpeed; 
+
+        // make it somehow how fast the player is it self and not the the speed it is meant to be going at. 
 
 
         
@@ -38,27 +42,25 @@ public class Profile : MonoBehaviour {
         {
             takenDamage = true;
             takenDamage = false;
-            shield -= 10;
+            shield -= addedDamaged * 8/10;
 
-            Debug.Log(shield); 
-           
         }
         if(collision.gameObject.tag == "Bullets")
         {
             takenDamage = true;
             takenDamage = false;
-            shield -= 5; 
-     
+            shield -= addedDamaged * 7 / 10;
+
         }
         if (takenDamage = true && shield <= 0)
         {
             if(collision.gameObject.tag == "Enemies")
             {
-                health -= 40; 
+                health -= addedDamaged * 8 / 10; ; 
             }
             if(collision.gameObject.tag == "Bullets")
             {
-                health -= 10;
+                health -= addedDamaged * 7 / 10; ;
             }
 
            

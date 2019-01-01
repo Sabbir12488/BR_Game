@@ -11,6 +11,21 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1769261599221728}
   m_IsPrefabAsset: 1
+--- !u!1 &1142771401939708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4037119464683576}
+  m_Layer: 0
+  m_Name: GroundChack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1182691325065270
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +106,7 @@ GameObject:
   - component: {fileID: 4069293305577974}
   - component: {fileID: 143963101710727426}
   - component: {fileID: 114162440223723228}
+  - component: {fileID: 114485528276235734}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -115,6 +131,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4037119464683576
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1142771401939708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4069293305577974}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4069293305577974
 Transform:
   m_ObjectHideFlags: 1
@@ -122,11 +151,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769261599221728}
   m_LocalRotation: {x: -0, y: 0.9997354, z: -0, w: 0.023003815}
-  m_LocalPosition: {x: -1.21, y: 0.57, z: 9.87}
+  m_LocalPosition: {x: 17.5, y: 10.95, z: 14.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4245410908581510}
   - {fileID: 4609185563073706}
+  - {fileID: 4037119464683576}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 177.36401, z: 0}
@@ -150,7 +180,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182691325065270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.5}
+  m_LocalPosition: {x: 0.016, y: -0.335, z: 0.349}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4069293305577974}
@@ -220,7 +250,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 60
+  field of view: 47
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -439,34 +469,59 @@ MonoBehaviour:
   horizonlatInputName: Horizontal
   verticalInputName: Vertical
   moveSpeed: 6
-  slopeForce: 5
+  runSpeed: 11
+  slopeForce: 10
   slopeForceRayLength: 5
   jumpFallOff:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: -1.8064969
-      outSlope: -1.8064969
+      value: 0.5
+      inSlope: -1.2319877
+      outSlope: -1.2319877
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.06230529
+      outWeight: 0.07009344
     - serializedVersion: 3
       time: 0.5013083
-      value: -0.2
-      inSlope: -1.6158237
-      outSlope: -1.6158237
+      value: 0
+      inSlope: -0.9950617
+      outSlope: -0.9950617
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.066978276
+      inWeight: 0.060747873
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  jumpMultiplier: 20
+  jumpMultiplier: 35
   jumpKey: 32
+  runKey: 304
+  groundChack: {fileID: 4037119464683576}
+  maxFallForce: 26
+  baseFallDamage: 3
+  fallForce: 0
+--- !u!114 &114485528276235734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769261599221728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b31c29a1d6116c48a1fe210cf5c822e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthImage: {fileID: 0}
+  healthText: {fileID: 0}
+  shield: 100
+  shieldImage: {fileID: 0}
+  battery: 100
+  batteryDrainRate: 3
+  batteryImage: {fileID: 0}
 --- !u!114 &114665935356287942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -483,7 +538,6 @@ MonoBehaviour:
   mouseSensitivity: 150
   playerBody: {fileID: 4069293305577974}
   cam: {fileID: 20253181721733250}
-  focus: {fileID: 0}
 --- !u!143 &143963101710727426
 CharacterController:
   m_ObjectHideFlags: 1

@@ -6,23 +6,48 @@ using UnityEngine.UI;
 
 public class Profile : MonoBehaviour {
 
-    public float health = 100f;
-    public float shield = 100f;
+// <<<<<<< HEAD
+   
     public bool takenDamage = false;
     public Text deathscreen;
     public float addedDamaged; 
 
-    [SerializeField]private Image healthImage;
-    [SerializeField]private Image shieldImage;
+    [Header("Health Variables")]
 
+    public float health = 100;
+    [SerializeField] private Image healthImage;
+    [SerializeField] private Text healthText;
+// >>>>>>> 1c0c7e783668a74a5ee408f682bce743961cd53f
+
+    [Space]
+
+    [Header("Shield Variables")]
+    //-- <<>> --//
+    public float shield = 100;
+    [SerializeField] private Image shieldImage;
+
+    [Space]
+
+    [Header("Battey Variables")]
+    //-- <<>> --//
+    public float battery = 100f;
+    public float batteryDrainRate = 10f;
+    [SerializeField] private Image batteryImage;
+    
+
+// <<<<<<< HEAD
     // Use this for initialization
     void Start () {
         deathscreen.enabled = false; 
 	}
 	
 	// Update is called once per frame
+
 	void Update () {
+
+        // Health
         healthImage.fillAmount = health / 100;
+
         shieldImage.fillAmount = shield / 100;
         addedDamaged = GetComponent<playerMovement>().moveSpeed; 
 
@@ -73,5 +98,32 @@ public class Profile : MonoBehaviour {
     {
         deathscreen.enabled = true; 
         Destroy(gameObject); 
+
+        healthText.text = health.ToString("0");
+        if(health <= 0)
+        {
+            health = 0f;
+        }
+
+        // Shield
+        shieldImage.fillAmount = shield / 100;
+
+        // Battery
+        batteryImage.fillAmount = battery / 100;
+
+        // Battery Draining
+        if(battery > 0)
+        {
+            battery -= Time.deltaTime / batteryDrainRate;
+        }
+	}
+
+    public void TakeDamage(float DamageAmount)
+    {
+        if (health <= 100 && health > 0)
+            health -= DamageAmount;
+        if (health <= 0)
+            Debug.Log("Oh nooo, I am DEAD");
+
     }
 }

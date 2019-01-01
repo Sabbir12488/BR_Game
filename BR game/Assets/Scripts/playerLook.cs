@@ -12,7 +12,7 @@ public class playerLook : MonoBehaviour {
 
     public Camera cam;
 
-    public Interactable focus;
+    private Interactable focus;
 
     private float xAxisClamp;
 

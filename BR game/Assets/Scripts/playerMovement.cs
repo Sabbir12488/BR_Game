@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour {
     [SerializeField] private string horizonlatInputName, verticalInputName;
 
     public float moveSpeed;
+    public float runSpeed;
     public float slopeForce;
     public float slopeForceRayLength;
 
@@ -15,17 +16,55 @@ public class playerMovement : MonoBehaviour {
     public AnimationCurve jumpFallOff;
     public float jumpMultiplier;
     public KeyCode jumpKey;
-
+    public KeyCode runKey;
     private bool isJumping;
+    public Transform groundChack;
+
+    bool isGrounded;
+
+    [Space]
+    public float maxFallForce;
+    public float baseFallDamage;
+    public float fallForce;
+
+    private Profile profile;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        profile = GetComponent<Profile>();
     }
 
     private void Update()
     {
+        if (Input.GetKey(runKey))
+        {
+            moveSpeed = runSpeed;
+        }else if (Input.GetKeyUp(runKey))
+        {
+            moveSpeed = 6f;
+        }
+
         PlayerMovement();
+
+        if(!isGrounded)
+        {
+            float vY = Mathf.Abs(controller.velocity.y);
+            fallForce = vY;
+        }
+
+        if (isGrounded)
+        {
+            if(fallForce > maxFallForce)
+            {
+                float damage = Mathf.RoundToInt(fallForce * baseFallDamage);
+                fallForce = 0;
+                Debug.Log("took " + damage.ToString() + " of damage");
+                profile.TakeDamage(damage);
+            }
+        }
+
+        isGrounded = Physics.CheckSphere(groundChack.transform.position, 0.1f);
     }
 
     void PlayerMovement()
@@ -34,6 +73,15 @@ public class playerMovement : MonoBehaviour {
         // moving forward and backward moving right and left
         float verInput = Input.GetAxis(verticalInputName);
         float horizInput = Input.GetAxis(horizonlatInputName);
+
+        if(verInput > 0f || verInput < 0f)
+        {
+            profile.batteryDrainRate = 2f;
+        }
+        else
+        {
+            profile.batteryDrainRate = 5f;
+        }
 
         Vector3 forwardMove = transform.forward * verInput;  
 
@@ -67,7 +115,7 @@ public class playerMovement : MonoBehaviour {
 
     void JumpInput()
     {
-        if (Input.GetKeyDown(jumpKey) && !isJumping)
+        if (Input.GetKeyDown(jumpKey) && !isJumping && isGrounded)
         {
             isJumping = true;
             StartCoroutine(JumpEvent());

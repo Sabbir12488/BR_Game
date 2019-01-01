@@ -15,8 +15,15 @@ public class playerMovement : MonoBehaviour {
     public AnimationCurve jumpFallOff;
     public float jumpMultiplier;
     public KeyCode jumpKey;
-
     private bool isJumping;
+    public Transform groundChack;
+
+    bool isGrounded;
+
+    [Space]
+    public float maxFallForce;
+    public float baseFallDamage;
+    public float fallForce;
 
     private void Awake()
     {
@@ -26,6 +33,24 @@ public class playerMovement : MonoBehaviour {
     private void Update()
     {
         PlayerMovement();
+
+        if(!isGrounded)
+        {
+            float vY = Mathf.Abs(controller.velocity.y);
+            fallForce = vY;
+        }
+
+        if (isGrounded)
+        {
+            if(fallForce > maxFallForce)
+            {
+                float damage = Mathf.RoundToInt(fallForce * baseFallDamage);
+                fallForce = 0;
+                Debug.Log("took " + damage.ToString() + " of damage");
+            }
+        }
+
+        isGrounded = Physics.CheckSphere(groundChack.transform.position, 0.1f);
     }
 
     void PlayerMovement()

@@ -5,20 +5,52 @@ using UnityEngine.UI;
 
 public class Profile : MonoBehaviour {
 
-    public float health = 100f;
-    public float shileld = 100f;
+    [Header("Health Variables")]
+    //-- <<>> --//
+    public float health = 100;
+    [SerializeField] private Image healthImage;
+    [SerializeField] private Text healthText;
 
-    [SerializeField]private Image healthImage;
-    [SerializeField]private Image shieldImage;
+    [Space]
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
+    [Header("Shield Variables")]
+    //-- <<>> --//
+    public float shield = 100;
+    [SerializeField] private Image shieldImage;
+
+    [Space]
+
+    [Header("Battey Variables")]
+    //-- <<>> --//
+    public float battery = 100f;
+    public float batteryDrainRate = 10f;
+    [SerializeField] private Image batteryImage;
+    
+
 	void Update () {
+
+        // Health
         healthImage.fillAmount = health / 100;
-        shieldImage.fillAmount = shileld / 100;
+        healthText.text = health.ToString("0");
+
+        // Shield
+        shieldImage.fillAmount = shield / 100;
+
+        // Battery
+        batteryImage.fillAmount = battery / 100;
+
+        // Battery Draining
+        if(battery > 0)
+        {
+            battery -= Time.deltaTime / batteryDrainRate;
+        }
 	}
+
+    public void TakeDamage(float DamageAmount)
+    {
+        if (health <= 100 && health > 0)
+            health -= DamageAmount;
+        if (health <= 0)
+            Debug.Log("Oh nooo, I am DEAD");
+    }
 }

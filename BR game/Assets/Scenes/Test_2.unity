@@ -11827,11 +11827,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 902600531}
   m_CullTransparentMesh: 0
---- !u!4 &1143613472 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4037119464683576, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-    type: 2}
-  m_PrefabInternal: {fileID: 1805337248}
 --- !u!1 &1170282056
 GameObject:
   m_ObjectHideFlags: 0
@@ -13284,96 +13279,10 @@ Prefab:
       propertyPath: batteryImage
       value: 
       objectReference: {fileID: 1199710816}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
         type: 2}
-      propertyPath: groundChack
-      value: 
-      objectReference: {fileID: 1143613472}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: maxFallForce
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: baseFallDamage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4037119464683576, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpFallOff.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpFallOff.m_Curve.Array.data[1].inSlope
-      value: -0.9950617
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpFallOff.m_Curve.Array.data[1].outSlope
-      value: -0.9950617
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpFallOff.m_Curve.Array.data[1].inWeight
-      value: 0.060747873
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpFallOff.m_Curve.Array.data[0].inSlope
-      value: -1.2319877
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpFallOff.m_Curve.Array.data[0].outSlope
-      value: -1.2319877
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpFallOff.m_Curve.Array.data[0].outWeight
-      value: 0.07009344
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpFallOff.m_Curve.Array.data[0].value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: jumpMultiplier
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: runSpeed
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: runKey
-      value: 304
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245410908581510, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245410908581510, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4245410908581510, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: slopeForce
-      value: 10
+      propertyPath: batteryDrainRate
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}

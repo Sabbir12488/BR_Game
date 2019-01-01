@@ -36,7 +36,7 @@ public class Profile : MonoBehaviour {
         }
 
 	}
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) // fix a bug that is here
     {
         if (collision.gameObject.tag == "Enemies")
         {

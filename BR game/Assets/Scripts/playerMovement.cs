@@ -74,15 +74,6 @@ public class playerMovement : MonoBehaviour {
         float verInput = Input.GetAxis(verticalInputName);
         float horizInput = Input.GetAxis(horizonlatInputName);
 
-        if(verInput > 0f || verInput < 0f)
-        {
-            profile.batteryDrainRate = 2f;
-        }
-        else
-        {
-            profile.batteryDrainRate = 5f;
-        }
-
         Vector3 forwardMove = transform.forward * verInput;  
 
         //Vector3 rightMove = transform.right * horizInput;   

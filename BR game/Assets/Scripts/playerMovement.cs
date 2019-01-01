@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour {
     [SerializeField] private string horizonlatInputName, verticalInputName;
 
     public float moveSpeed;
+    public float runSpeed;
     public float slopeForce;
     public float slopeForceRayLength;
 
@@ -15,6 +16,7 @@ public class playerMovement : MonoBehaviour {
     public AnimationCurve jumpFallOff;
     public float jumpMultiplier;
     public KeyCode jumpKey;
+    public KeyCode runKey;
     private bool isJumping;
     public Transform groundChack;
 
@@ -25,13 +27,24 @@ public class playerMovement : MonoBehaviour {
     public float baseFallDamage;
     public float fallForce;
 
+    private Profile profile;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        profile = GetComponent<Profile>();
     }
 
     private void Update()
     {
+        if (Input.GetKey(runKey))
+        {
+            moveSpeed = runSpeed;
+        }else if (Input.GetKeyUp(runKey))
+        {
+            moveSpeed = 6f;
+        }
+
         PlayerMovement();
 
         if(!isGrounded)
@@ -47,6 +60,7 @@ public class playerMovement : MonoBehaviour {
                 float damage = Mathf.RoundToInt(fallForce * baseFallDamage);
                 fallForce = 0;
                 Debug.Log("took " + damage.ToString() + " of damage");
+                profile.TakeDamage(damage);
             }
         }
 
@@ -90,7 +104,7 @@ public class playerMovement : MonoBehaviour {
 
     void JumpInput()
     {
-        if (Input.GetKeyDown(jumpKey) && !isJumping)
+        if (Input.GetKeyDown(jumpKey) && !isJumping && isGrounded)
         {
             isJumping = true;
             StartCoroutine(JumpEvent());

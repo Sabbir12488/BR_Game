@@ -32,6 +32,10 @@ public class Profile : MonoBehaviour {
         // Health
         healthImage.fillAmount = health / 100;
         healthText.text = health.ToString("0");
+        if(health <= 0)
+        {
+            health = 0f;
+        }
 
         // Shield
         shieldImage.fillAmount = shield / 100;

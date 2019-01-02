@@ -8,9 +8,9 @@ public class Profile : MonoBehaviour {
 
 // <<<<<<< HEAD
    
-    public bool takenDamage = false;
-    public Text deathscreen;
-    public float addedDamaged; 
+    //public bool takenDamage = false;
+    //public Text deathscreen;
+    //public float addedDamaged; 
 
     [Header("Health Variables")]
 
@@ -38,7 +38,7 @@ public class Profile : MonoBehaviour {
 // <<<<<<< HEAD
     // Use this for initialization
     void Start () {
-        deathscreen.enabled = false; 
+        //deathscreen.enabled = false; 
 	}
 	
 	// Update is called once per frame
@@ -47,21 +47,31 @@ public class Profile : MonoBehaviour {
 
         // Health
         healthImage.fillAmount = health / 100;
+        healthText.text = health.ToString("0");
 
+        //addedDamaged = GetComponent<playerMovement>().moveSpeed; 
+
+             // make it somehow how fast the player is it self and not the the speed it is meant to be going at. 
+
+        // Shield
         shieldImage.fillAmount = shield / 100;
-        addedDamaged = GetComponent<playerMovement>().moveSpeed; 
 
-        // make it somehow how fast the player is it self and not the the speed it is meant to be going at. 
+        // Battery
+        batteryImage.fillAmount = battery / 100;
 
+        // Battery Draining
+        if (battery > 0)
+        {
+            battery -= Time.deltaTime / batteryDrainRate;
+        }
 
-        
-        if(health <= 0)
+        if (health <= 0)
         {
             Die(); 
         }
 
 	}
-    private void OnCollisionEnter(Collision collision) // fix a bug that is here
+    /*private void OnCollisionEnter(Collision collision) // fix a bug that is here
     {
         if (collision.gameObject.tag == "Enemies")
         {
@@ -92,29 +102,16 @@ public class Profile : MonoBehaviour {
         }
 
 
-    }
+    }*/
 
     void Die()
     {
-        deathscreen.enabled = true; 
-        Destroy(gameObject); 
+        //deathscreen.enabled = true; 
+        //Destroy(gameObject); 
 
-        healthText.text = health.ToString("0");
         if(health <= 0)
         {
             health = 0f;
-        }
-
-        // Shield
-        shieldImage.fillAmount = shield / 100;
-
-        // Battery
-        batteryImage.fillAmount = battery / 100;
-
-        // Battery Draining
-        if(battery > 0)
-        {
-            battery -= Time.deltaTime / batteryDrainRate;
         }
 	}
 

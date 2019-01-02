@@ -151,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769261599221728}
   m_LocalRotation: {x: -0, y: 0.9997354, z: -0, w: 0.023003815}
-  m_LocalPosition: {x: -1.21, y: 0.5, z: 9.87}
+  m_LocalPosition: {x: -3.53, y: 2.7, z: 14.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4245410908581510}
@@ -179,13 +179,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182691325065270}
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0.016, y: -0.335, z: 0.349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.35, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4069293305577974}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4473667281923678
 Transform:
   m_ObjectHideFlags: 1
@@ -469,7 +469,8 @@ MonoBehaviour:
   horizonlatInputName: Horizontal
   verticalInputName: Vertical
   moveSpeed: 6
-  slopeForce: 5
+  runSpeed: 9
+  slopeForce: 10
   slopeForceRayLength: 5
   jumpFallOff:
     serializedVersion: 2
@@ -497,8 +498,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMultiplier: 20
   jumpKey: 32
-  maxFallForce: 0
-  baseFallDamage: 0
+  runKey: 304
+  groundChack: {fileID: 4037119464683576}
+  maxFallForce: 26
+  baseFallDamage: 3
   fallForce: 0
 --- !u!114 &114485528276235734
 MonoBehaviour:
@@ -517,7 +520,7 @@ MonoBehaviour:
   shield: 100
   shieldImage: {fileID: 0}
   battery: 100
-  batteryDrainRate: 3
+  batteryDrainRate: 6
   batteryImage: {fileID: 0}
 --- !u!114 &114665935356287942
 MonoBehaviour:

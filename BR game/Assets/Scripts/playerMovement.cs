@@ -74,6 +74,16 @@ public class playerMovement : MonoBehaviour {
         float verInput = Input.GetAxis(verticalInputName);
         float horizInput = Input.GetAxis(horizonlatInputName);
 
+        // battery drains fastet when the player moves
+        if(verInput < 0 || verInput > 0)
+        {
+            profile.batteryDrainRate = 3.5f;
+        }
+        else
+        {
+            profile.batteryDrainRate = 6f;
+        }
+
         Vector3 forwardMove = transform.forward * verInput;  
 
         //Vector3 rightMove = transform.right * horizInput;   

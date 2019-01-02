@@ -31,10 +31,10 @@ public class playerLook : MonoBehaviour {
     void Update()
     {       
 
-        if (EventSystem.current.IsPointerOverGameObject())
+        /*if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
-        }
+        }*/
 
         CameraRotation();
 
@@ -87,8 +87,8 @@ public class playerLook : MonoBehaviour {
 
     void CameraRotation()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
+        /*if (EventSystem.current.IsPointerOverGameObject())
+            return;*/
 
 
         float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity * Time.deltaTime;

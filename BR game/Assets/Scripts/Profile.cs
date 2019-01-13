@@ -55,8 +55,8 @@ public class Profile : MonoBehaviour {
         healthImage.fillAmount = health / 100;
         healthText.text = health.ToString("0");
 
-        addedDamaged = GetComponent<playerMovement>().moveSpeed; 
-
+        addedDamaged = GetComponent<PlayerController>().speed; 
+    
              // make it somehow how fast the player is it self and not the the speed it is meant to be going at. 
 
         // Shield
@@ -68,7 +68,7 @@ public class Profile : MonoBehaviour {
         // Battery Draining
         if (battery > 0)
         {
-            battery -= Time.deltaTime / batteryDrainRate;
+            battery -= Time.deltaTime / batteryDrainRate * 3;
         }
         if(battery <= 0)
         {

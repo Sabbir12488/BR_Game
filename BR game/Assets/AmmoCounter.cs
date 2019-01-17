@@ -12,11 +12,12 @@ public class AmmoCounter : MonoBehaviour {
     public Text displayAmmoCounter;
     public static bool reloading = false; 
 
+
     
 
 	// Use this for initialization
 	void Start () {
-        Maxammo = currentAmmo;
+        currentAmmo = Maxammo; 
         NumberOfLoads = Loads; 
 
         displayAmmoCounter.text = "";
@@ -25,15 +26,27 @@ public class AmmoCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+      if(PauseMenuScript.GameIsPaused == true)
+        {
+            return; 
+        }
+
         displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
+
+
+
+        if (currentAmmo == 0 && NumberOfLoads == 0)
+        {
+            displayAmmoCounter.text = 0 + " <b>l " + 0 + " </b> ";
+
+        }
 
         if (currentAmmo == 0)
         {
 
             StartCoroutine(Reloading());
-            currentAmmo = 0.000001f; 
-            NumberOfLoads -= 1; 
-       
+           
         }
         if(currentAmmo <= 0)
         {
@@ -47,14 +60,17 @@ public class AmmoCounter : MonoBehaviour {
             currentAmmo -= 1;
 
         }
+
     }
     IEnumerator Reloading()
     {
 
-        
-        reloading = true; 
-        yield return new WaitForSeconds(3);
+        reloading = true;
         currentAmmo = Maxammo;
+        NumberOfLoads -= 1;
+    
+    yield return new WaitForSeconds(3);
+      
        
         reloading = false;
 

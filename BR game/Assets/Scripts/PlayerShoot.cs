@@ -19,34 +19,45 @@ public class PlayerShoot : MonoBehaviour {
 
     void Update()
     {
-        if(AmmoCounter.reloading == true)
+        if (AmmoCounter.reloading == true)
         {
-            
-            return; 
-        }
-        
-            if(AmmoCounter.NumberOfLoads <= 0)
-            {
-                return; 
-            }
 
-            // shooting goes here. We need a prefab version.
-            if (Input.GetButtonDown("Fire1"))
+            return;
+        }
+        else
+        {
+
+
+
+            if (AmmoCounter.NumberOfLoads < 0)
             {
-            
-            Instantiate(bullets, player.transform.position, transform.rotation);
-            RaycastHit Shot;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
+
+                return;
+            }
+            else
+            {
+
+                // shooting goes here. We need a prefab version.
+                if (Input.GetButtonDown("Fire1"))
                 {
-                    TargetDistance = Shot.distance;
-                    if (TargetDistance < AllowedRange)
+
+                    RaycastHit Shot;
+                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
                     {
-                        Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+                        TargetDistance = Shot.distance;
+                        if (TargetDistance < AllowedRange)
+                        {
+                            Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+                        }
                     }
+
+
+
+
                 }
 
             }
-        
+        }
     }
 
 

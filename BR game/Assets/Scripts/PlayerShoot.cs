@@ -37,21 +37,31 @@ public class PlayerShoot : MonoBehaviour {
             else
             {
 
-                // shooting goes here. We need a prefab version.
-                if (Input.GetButtonDown("Fire1"))
+                if (AmmoCounter.NoAmmo == true)
+                {
+                    return; 
+                }
+                else
                 {
 
-                    RaycastHit Shot;
-                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
+                
+               
+
+                    // shooting goes here. We need a prefab version.
+                    if (Input.GetButtonDown("Fire1"))
                     {
-                        TargetDistance = Shot.distance;
-                        if (TargetDistance < AllowedRange)
+
+                        RaycastHit Shot;
+                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
                         {
-                            Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+                            TargetDistance = Shot.distance;
+                            if (TargetDistance < AllowedRange)
+                            {
+                                Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+                            }
                         }
+
                     }
-
-
 
 
                 }

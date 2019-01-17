@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour {
 
     void DeductPoints(int DamageAmount)
     {
+        Debug.Log(Enemyhealth); 
         Enemyhealth -= DamageAmount;
     }
 

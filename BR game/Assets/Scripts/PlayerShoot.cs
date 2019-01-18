@@ -6,11 +6,14 @@ public class PlayerShoot : MonoBehaviour {
 
  
 
- public int DamageAmount = 5;
-    public float TargetDistance;
-    public float AllowedRange = 15.0f;
-    public GameObject bullets;
-    public GameObject player; 
+ 
+
+    public Transform firepoint;
+    public GameObject bulletPrefab;
+    
+    public float firerate = 0.2f;
+    private float fireCountdown = 0f;
+   
 
     private void Start()
     {
@@ -19,6 +22,12 @@ public class PlayerShoot : MonoBehaviour {
 
     void Update()
     {
+
+        if (PauseMenuScript.GameIsPaused == true)
+        {
+            return;
+        }
+
         if (AmmoCounter.reloading == true)
         {
 
@@ -26,7 +35,7 @@ public class PlayerShoot : MonoBehaviour {
         }
         else
         {
-
+            
 
 
             if (AmmoCounter.NumberOfLoads < 0)
@@ -43,25 +52,19 @@ public class PlayerShoot : MonoBehaviour {
                 }
                 else
                 {
-
-                
-               
-
-                    // shooting goes here. We need a prefab version.
-                    if (Input.GetButtonDown("Fire1"))
+                    if (Input.GetButtonDown("Fire1") && fireCountdown <= 0f)
                     {
-
-                        RaycastHit Shot;
-                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
-                        {
-                            TargetDistance = Shot.distance;
-                            if (TargetDistance < AllowedRange)
-                            {
-                                Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
-                            }
-                        }
+                        
+                        Shoot();
+                        fireCountdown = 0.5f / firerate;
 
                     }
+
+                    fireCountdown -= Time.deltaTime;
+
+
+
+
 
 
                 }
@@ -70,5 +73,10 @@ public class PlayerShoot : MonoBehaviour {
         }
     }
 
+    void Shoot()
+    {
+        AmmoCounter.currentAmmo -= 1;
+        Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+    }
 
 }

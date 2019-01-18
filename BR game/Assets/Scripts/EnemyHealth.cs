@@ -5,12 +5,11 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 
     public int Enemyhealth = 30;
+    public int DamageTaken = 0; 
 
-    void DeductPoints(int DamageAmount)
+    private void Start()
     {
-        
-        Enemyhealth -= DamageAmount;
-        Debug.Log(Enemyhealth);
+        DamageTaken = BulletMoveScript.DamageToBadGuys; 
     }
 
     void Update()
@@ -18,6 +17,14 @@ public class EnemyHealth : MonoBehaviour {
         if (Enemyhealth <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Bullets")
+        {
+            Enemyhealth -= DamageTaken; 
         }
     }
 }

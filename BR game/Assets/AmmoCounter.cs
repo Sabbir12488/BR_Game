@@ -43,19 +43,7 @@ public class AmmoCounter : MonoBehaviour {
         }
         else
         {
-            if (reloading == false)
-            {
-
-                if (Input.GetButtonDown("Fire1"))
-                {
-                    currentAmmo -= 1;
-
-                }
-            }
-            else
-            {
-                return;
-            }
+            
             if (currentAmmo == 0)
             {
 

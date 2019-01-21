@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMotor : MonoBehaviour {
-
-    [SerializeField]
-    private Camera cam; 
-
-
-
+public class MotorForFlyingForMK : MonoBehaviour {
 
     private Vector3 velocity = Vector3.zero;
     private Rigidbody rb;
-    private Vector3 rotation = Vector3.zero;
-    private Vector3 cameraRotation = Vector3.zero; 
-
+    private Vector3 rotation = Vector3.zero; 
 
     private void Start()
     {
@@ -30,20 +22,11 @@ public class PlayerMotor : MonoBehaviour {
     {
         rotation = _rotation; 
     }
-    public void RotateCamera(Vector3 _cameraRotation)
-    {
-        cameraRotation = _cameraRotation; 
-    }
 
     void FixedUpdate()
     {
-
-
-
         PreformMovement();
         PreformRotation(); 
-
-        
         
     }
 
@@ -59,10 +42,5 @@ public class PlayerMotor : MonoBehaviour {
     void PreformRotation()
     {
         rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation)); 
-        if( cam != null)
-        {
-            cam.transform.Rotate(-cameraRotation); 
-        }
-
     } 
 }

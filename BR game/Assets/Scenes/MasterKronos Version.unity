@@ -1085,6 +1085,108 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 240246472}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
+=======
+--- !u!1 &244868955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1182691325065270, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244868959}
+  - component: {fileID: 244868958}
+  - component: {fileID: 244868957}
+  - component: {fileID: 244868956}
+  m_Layer: 0
+  m_Name: PlayerCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &244868956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114665935356287942, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244868955}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf4ccbe8adbf954c9067dc0a4a5394a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseXInputName: Mouse X
+  mouseYInputName: Mouse Y
+  mouseSensitivity: 150
+  playerBody: {fileID: 1363952149}
+  cam: {fileID: 244868958}
+--- !u!81 &244868957
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 81537167821352232, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244868955}
+  m_Enabled: 1
+--- !u!20 &244868958
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 20253181721733250, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244868955}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 1000
+  field of view: 47
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &244868959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4245410908581510, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244868955}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: -0, y: 0.63, z: -2.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1363952149}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+>>>>>>> parent of 3b0088a... Shooting works and you can kill. I just don't have any pretty effects for it let.
 --- !u!1 &248019855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1853,94 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 329521015}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
+=======
+--- !u!1 &352315171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352315175}
+  - component: {fileID: 352315174}
+  - component: {fileID: 352315173}
+  - component: {fileID: 352315172}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Enemies
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &352315172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 352315171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.7231522}
+  m_Center: {x: 0, y: 0, z: 0.36157608}
+--- !u!23 &352315173
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 352315171}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &352315174
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 352315171}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &352315175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 352315171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.369, y: 9.929, z: 12.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 3b0088a... Shooting works and you can kill. I just don't have any pretty effects for it let.
 --- !u!1 &378650730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +2041,7 @@ GameObject:
   - component: {fileID: 401342255}
   m_Layer: 0
   m_Name: Enemy (1)
-  m_TagString: Enemies
+  m_TagString: Bullets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1866,8 +2056,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.9690418}
-  m_Center: {x: 0, y: 0, z: -0.015479088}
+  m_Size: {x: 1, y: 1, z: 1.7231522}
+  m_Center: {x: 0, y: 0, z: 0.36157608}
 --- !u!23 &401342251
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1917,18 +2107,68 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 401342249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 18.369, y: 10.97, z: 12.46}
+=======
+  m_LocalPosition: {x: 18.369, y: 9.929, z: 17.526}
+>>>>>>> parent of 3b0088a... Shooting works and you can kill. I just don't have any pretty effects for it let.
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!54 &401342254
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 401342249}
+=======
+--- !u!1 &421379595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1466111881629886, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421379596}
+  - component: {fileID: 421379599}
+  - component: {fileID: 421379598}
+  - component: {fileID: 421379597}
+  m_Layer: 0
+  m_Name: Nose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &421379596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4231534841146346, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421379595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.014, y: 0.265, z: 0.6379}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.28896}
+  m_Children: []
+  m_Father: {fileID: 2055304167}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &421379597
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 65183067273419448, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421379595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+>>>>>>> parent of 3b0088a... Shooting works and you can kill. I just don't have any pretty effects for it let.
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -3188,7 +3428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1041249899
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4049,12 +4289,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1363952149}
   - component: {fileID: 1363952147}
+  - component: {fileID: 1363952146}
   - component: {fileID: 1363952145}
   - component: {fileID: 1363952148}
   - component: {fileID: 1363952144}
-  - component: {fileID: 1363952151}
   - component: {fileID: 1363952150}
+<<<<<<< HEAD
   - component: {fileID: 1363952152}
+=======
+  - component: {fileID: 1363952151}
+>>>>>>> parent of 3b0088a... Shooting works and you can kill. I just don't have any pretty effects for it let.
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4097,6 +4341,58 @@ MonoBehaviour:
   deathscreen: {fileID: 1041249900}
   takenDamage: 0
   addedDamaged: 0
+<<<<<<< HEAD
+=======
+--- !u!114 &1363952146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1363952143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262e5fdd37f4a6142a6357b5f42ada25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizonlatInputName: Horizontal
+  verticalInputName: Vertical
+  moveSpeed: 6
+  runSpeed: 9
+  slopeForce: 10
+  slopeForceRayLength: 5
+  jumpFallOff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1.8064969
+      outSlope: -1.8064969
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.06230529
+    - serializedVersion: 3
+      time: 0.5013083
+      value: -0.2
+      inSlope: -1.6158237
+      outSlope: -1.6158237
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.066978276
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  jumpMultiplier: 20
+  jumpKey: 32
+  runKey: 304
+  groundChack: {fileID: 960681263}
+  maxFallForce: 26
+  baseFallDamage: 3
+  fallForce: 0
+>>>>>>> parent of 3b0088a... Shooting works and you can kill. I just don't have any pretty effects for it let.
 --- !u!143 &1363952147
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4137,42 +4433,41 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1363952143}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.9997354, z: -0, w: 0.023003815}
   m_LocalPosition: {x: 15.22, y: 10.92, z: 13.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2055304167}
   - {fileID: 960681263}
   - {fileID: 244868959}
-  - {fileID: 405043389}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 177.36401, z: 0}
 --- !u!114 &1363952150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1363952143}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9534117d407cd641af208ed10cb0115, type: 3}
+  m_Script: {fileID: 11500000, guid: cedb561d9ad6fcd43945500a308b494e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
   lookSensitivity: 3
-  currentSpeed: 2
 --- !u!114 &1363952151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1363952143}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ea5fc7319703fc448c49841df894703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   cam: {fileID: 244868958}
 --- !u!114 &1363952152
 MonoBehaviour:
@@ -4189,6 +4484,8 @@ MonoBehaviour:
   TargetDistance: 0
   AllowedRange: 15
 >>>>>>> parent of d78cfbd... The ammo works
+=======
+>>>>>>> parent of 3b0088a... Shooting works and you can kill. I just don't have any pretty effects for it let.
 --- !u!1 &1393042847
 GameObject:
   m_ObjectHideFlags: 0
@@ -5338,6 +5635,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1921254816
 GameObject:
   m_ObjectHideFlags: 0
@@ -5424,6 +5722,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 3b0088a... Shooting works and you can kill. I just don't have any pretty effects for it let.
 --- !u!1 &1958812275
 GameObject:
   m_ObjectHideFlags: 0

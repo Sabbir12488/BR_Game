@@ -46,11 +46,8 @@ public class PlayerShoot : MonoBehaviour {
             else
             {
 
-                if (AmmoCounter.NoAmmo == true)
-                {
-                    return; 
-                }
-                else
+                // shooting goes here. We need a prefab version.
+                if (Input.GetButtonDown("Fire1"))
                 {
                     if (Input.GetButtonDown("Fire1") && fireCountdown <= 0f)
                     {
@@ -62,7 +59,21 @@ public class PlayerShoot : MonoBehaviour {
 
                     fireCountdown -= Time.deltaTime;
 
+<<<<<<< HEAD
 
+
+
+=======
+                    RaycastHit Shot;
+                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
+                    {
+                        TargetDistance = Shot.distance;
+                        if (TargetDistance < AllowedRange)
+                        {
+                            Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+                        }
+                    }
+>>>>>>> parent of d78cfbd... The ammo works
 
 
 

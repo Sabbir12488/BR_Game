@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class AmmoCounter : MonoBehaviour {
 
     public float Maxammo = 5;
-    public int Loads = 2; 
+    public int Loads = 5; 
     public static float currentAmmo = 5;
     public static int NumberOfLoads = 10; 
     public Text displayAmmoCounter;
-    public static bool reloading = false;
-    public static bool NoAmmo = false; 
+    public static bool reloading = false; 
 
 
     
@@ -19,8 +18,8 @@ public class AmmoCounter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         currentAmmo = Maxammo; 
-        NumberOfLoads = Loads;
-        Debug.Log(NumberOfLoads); 
+        NumberOfLoads = Loads; 
+
         displayAmmoCounter.text = "";
         displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
     }
@@ -39,6 +38,7 @@ public class AmmoCounter : MonoBehaviour {
 
         if (currentAmmo == 0 && NumberOfLoads == 0)
         {
+<<<<<<< HEAD
             NoAmmo = true; 
         }
         else
@@ -48,41 +48,42 @@ public class AmmoCounter : MonoBehaviour {
             {
 
                 StartCoroutine(Reloading());
+=======
+            displayAmmoCounter.text = 0 + " <b>l " + 0 + " </b> ";
+>>>>>>> parent of d78cfbd... The ammo works
 
-            }
         }
 
-        if(NumberOfLoads < 0)
+        if (currentAmmo == 0)
         {
-            NumberOfLoads = 0;
-            displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
-        }
 
-        
+            StartCoroutine(Reloading());
+           
+        }
         if(currentAmmo <= 0)
         {
             currentAmmo = 0;
             displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
         }
+      
+        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            currentAmmo -= 1;
+
+        }
 
     }
     IEnumerator Reloading()
     {
-        
 
         reloading = true;
-    
+        currentAmmo = Maxammo;
         NumberOfLoads -= 1;
-
-        if(NumberOfLoads > -1)
-        {
-            currentAmmo = Maxammo;
-
-        }
-        
-        yield return new WaitForSeconds(3);
-
-        
+    
+    yield return new WaitForSeconds(3);
+      
+       
         reloading = false;
 
         yield break; 

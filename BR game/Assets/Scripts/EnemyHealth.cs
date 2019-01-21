@@ -9,7 +9,12 @@ public class EnemyHealth : MonoBehaviour {
 
     private void Start()
     {
+<<<<<<< HEAD
         DamageTaken = BulletMoveScript.DamageToBadGuys; 
+=======
+        Debug.Log(Enemyhealth); 
+        Enemyhealth -= DamageAmount;
+>>>>>>> parent of d78cfbd... The ammo works
     }
 
     void Update()

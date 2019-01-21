@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour {
 
  
 
+<<<<<<< HEAD
  
 
     public Transform firepoint;
@@ -14,14 +15,16 @@ public class PlayerShoot : MonoBehaviour {
     public float firerate = 0.2f;
     private float fireCountdown = 0f;
    
+=======
+ public int DamageAmount = 5;
+    public float TargetDistance;
+    public float AllowedRange = 15.0f; 
+>>>>>>> parent of a70b962... Ammo almost working.
 
-    private void Start()
-    {
-        
-    }
 
-    void Update()
+  void Update()
     {
+<<<<<<< HEAD
 
         if (PauseMenuScript.GameIsPaused == true)
         {
@@ -78,8 +81,18 @@ public class PlayerShoot : MonoBehaviour {
 
 
 
+=======
+        if (Input.GetButtonDown("Fire1"))
+        {
+            RaycastHit Shot;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
+            {
+                TargetDistance = Shot.distance;
+                if (TargetDistance < AllowedRange)
+                {
+                    Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+>>>>>>> parent of a70b962... Ammo almost working.
                 }
-
             }
         }
     }

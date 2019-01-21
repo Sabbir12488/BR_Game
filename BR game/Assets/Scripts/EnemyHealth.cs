@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         DamageTaken = BulletMoveScript.DamageToBadGuys; 
 =======
         Debug.Log(Enemyhealth); 
@@ -19,6 +20,10 @@ public class EnemyHealth : MonoBehaviour {
 >>>>>>> parent of a70b962... Ammo almost working.
 =======
 >>>>>>> parent of a70b962... Ammo almost working.
+        Enemyhealth -= DamageAmount;
+>>>>>>> parent of d78cfbd... The ammo works
+=======
+        Debug.Log(Enemyhealth); 
         Enemyhealth -= DamageAmount;
 >>>>>>> parent of d78cfbd... The ammo works
     }

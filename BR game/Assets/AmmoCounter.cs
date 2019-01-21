@@ -39,6 +39,7 @@ public class AmmoCounter : MonoBehaviour {
         if (currentAmmo == 0 && NumberOfLoads == 0)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             NoAmmo = true; 
         }
         else
@@ -48,6 +49,9 @@ public class AmmoCounter : MonoBehaviour {
             {
 
                 StartCoroutine(Reloading());
+=======
+            displayAmmoCounter.text = 0 + " <b>l " + 0 + " </b> ";
+>>>>>>> parent of d78cfbd... The ammo works
 =======
             displayAmmoCounter.text = 0 + " <b>l " + 0 + " </b> ";
 >>>>>>> parent of d78cfbd... The ammo works

@@ -64,6 +64,7 @@ public class PlayerShoot : MonoBehaviour {
 
                     }
 
+<<<<<<< HEAD
                     fireCountdown -= Time.deltaTime;
 
 <<<<<<< HEAD
@@ -71,6 +72,8 @@ public class PlayerShoot : MonoBehaviour {
 
 
 =======
+=======
+>>>>>>> parent of d78cfbd... The ammo works
                     RaycastHit Shot;
                     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
                     {
@@ -84,6 +87,12 @@ public class PlayerShoot : MonoBehaviour {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+                }
+>>>>>>> parent of d78cfbd... The ammo works
 
 =======
         if (Input.GetButtonDown("Fire1"))

@@ -10,7 +10,8 @@ public class AmmoCounter : MonoBehaviour {
     public static float currentAmmo = 5;
     public static int NumberOfLoads = 10; 
     public Text displayAmmoCounter;
-    public static bool reloading = false; 
+    public static bool reloading = false;
+    public bool NoAmmo = false; 
 
 
     
@@ -23,13 +24,18 @@ public class AmmoCounter : MonoBehaviour {
         displayAmmoCounter.text = "";
         displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-      if(PauseMenuScript.GameIsPaused == true)
+    // Update is called once per frame
+    void Update() {
+
+        if(NoAmmo == true)
         {
             return; 
+        }
+
+        if (PauseMenuScript.GameIsPaused == true)
+        {
+            return;
         }
 
         displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
@@ -38,59 +44,60 @@ public class AmmoCounter : MonoBehaviour {
 
         if (currentAmmo == 0 && NumberOfLoads == 0)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            NoAmmo = true; 
+
+            NoAmmo = true;
         }
         else
         {
-            
+
             if (currentAmmo == 0)
             {
 
                 StartCoroutine(Reloading());
-=======
-            displayAmmoCounter.text = 0 + " <b>l " + 0 + " </b> ";
->>>>>>> parent of d78cfbd... The ammo works
-=======
-            displayAmmoCounter.text = 0 + " <b>l " + 0 + " </b> ";
->>>>>>> parent of d78cfbd... The ammo works
+
+                displayAmmoCounter.text = 0 + " <b>l " + 0 + " </b> ";
+
+                displayAmmoCounter.text = 0 + " <b>l " + 0 + " </b> ";
+
+
+            }
+
+            if (currentAmmo == 0)
+            {
+
+                StartCoroutine(Reloading());
+
+            }
+            if (currentAmmo <= 0)
+            {
+                currentAmmo = 0;
+                displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
+            }
+
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                currentAmmo -= 1;
+
+            }
 
         }
-
-        if (currentAmmo == 0)
-        {
-
-            StartCoroutine(Reloading());
-           
-        }
-        if(currentAmmo <= 0)
-        {
-            currentAmmo = 0;
-            displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
-        }
-      
-        
-        if (Input.GetButtonDown("Fire1"))
-        {
-            currentAmmo -= 1;
-
-        }
-
     }
-    IEnumerator Reloading()
-    {
+        IEnumerator Reloading()
+        {
 
-        reloading = true;
-        currentAmmo = Maxammo;
-        NumberOfLoads -= 1;
-    
-    yield return new WaitForSeconds(3);
-      
-       
-        reloading = false;
+            reloading = true;
+            currentAmmo = Maxammo;
+            NumberOfLoads -= 1;
 
-        yield break; 
-        
-    }
-}
+            yield return new WaitForSeconds(3);
+
+
+            reloading = false;
+
+            yield break;
+
+        }
+
+
+   }   

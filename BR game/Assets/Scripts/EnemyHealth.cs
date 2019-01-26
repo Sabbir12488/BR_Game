@@ -5,42 +5,33 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 
     public int Enemyhealth = 30;
-    public int DamageTaken = 0; 
+    public int DamageTaken = 0;
+
 
     private void Start()
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        DamageTaken = BulletMoveScript.DamageToBadGuys; 
-=======
-        Debug.Log(Enemyhealth); 
-=======
->>>>>>> parent of a70b962... Ammo almost working.
-=======
->>>>>>> parent of a70b962... Ammo almost working.
-        Enemyhealth -= DamageAmount;
->>>>>>> parent of d78cfbd... The ammo works
-=======
-        Debug.Log(Enemyhealth); 
-        Enemyhealth -= DamageAmount;
->>>>>>> parent of d78cfbd... The ammo works
+
+        DamageTaken = BulletMoveScript.DamageToBadGuys;
+
+        Debug.Log(Enemyhealth);
+
+        Enemyhealth -= DamageTaken;
     }
 
-    void Update()
+    private void Update()
     {
-        if (Enemyhealth <= 0)
+        if(Enemyhealth <= 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); 
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Bullets")
-        {
-            Enemyhealth -= DamageTaken; 
+        if(collision.gameObject.tag == "Bullets") { 
+
+            Enemyhealth -= DamageTaken;
         }
     }
+
+   
 }

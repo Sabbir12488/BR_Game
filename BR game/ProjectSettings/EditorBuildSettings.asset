@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Orfee Version.unity
+    path: Assets/Scenes/Test Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: a0c9d8b1999c1bc41adcf0eb16dd22e4
   - enabled: 1
-    path: Assets/Scenes/MasterKronos Version.unity
-    guid: da7011fa6fa64ff459693452663fe2a0
-  - enabled: 0
     path: Assets/Scenes/Test_2.unity
     guid: 5bdedcadc1f905e439c54618c6f08121
   m_configObjects: {}

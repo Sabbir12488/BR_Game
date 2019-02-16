@@ -34,17 +34,11 @@ public class Profile : MonoBehaviour {
     public float batteryDrainRate = 10f;
     [SerializeField] private Image batteryImage;
     
-    [Space]
-
-    [Header("DeathScreenAndOthers")]
-        public Text deathscreen;
-    public bool takenDamage;
-    public float addedDamaged; 
 
 // <<<<<<< HEAD
     // Use this for initialization
     void Start () {
-        deathscreen.enabled = false; 
+        //deathscreen.enabled = false; 
 	}
 	
 	// Update is called once per frame
@@ -55,7 +49,7 @@ public class Profile : MonoBehaviour {
         healthImage.fillAmount = health / 100;
         healthText.text = health.ToString("0");
 
-        addedDamaged = GetComponent<playerMovement>().moveSpeed; 
+        //addedDamaged = GetComponent<playerMovement>().moveSpeed; 
 
              // make it somehow how fast the player is it self and not the the speed it is meant to be going at. 
 
@@ -70,20 +64,6 @@ public class Profile : MonoBehaviour {
         {
             battery -= Time.deltaTime / batteryDrainRate;
         }
-        if(battery <= 0)
-        {
-
-            if(battery <= 0 && shield <= 0)
-            {
-                Die(); 
-            }
-            shield = 0;
-
-
-            battery = 100; 
-            
-            
-        }
 
         if (health <= 0)
         {
@@ -91,11 +71,10 @@ public class Profile : MonoBehaviour {
         }
 
 	}
-    private void OnCollisionEnter(Collision collision) // fix a bug that is here
+    /*private void OnCollisionEnter(Collision collision) // fix a bug that is here
     {
         if (collision.gameObject.tag == "Enemies")
         {
-           
             takenDamage = true;
             takenDamage = false;
             shield -= addedDamaged * 8/10;
@@ -123,7 +102,7 @@ public class Profile : MonoBehaviour {
         }
 
 
-    }
+    }*/
 
     void Die()
     {

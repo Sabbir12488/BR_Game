@@ -6,7 +6,11 @@ public class GunSystem : MonoBehaviour {
     public float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 30f;
-    public GameObject impactEffect; 
+    public GameObject impactEffect;
+    public Animator anim;
+    public ParticleSystem muzzleFlash;
+
+    private bool ads;
 
     public Camera fpsCam;
 
@@ -17,12 +21,41 @@ public class GunSystem : MonoBehaviour {
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
+            anim.SetBool("Fire", true);
+
             Shoot();
         }
-	}
+        else
+        {
+            anim.SetBool("Fire", false);
+        }
+        if (Input.GetButton("Fire2"))
+        {
+            anim.SetBool("ADS", true);
+            ads = true;
+        }
+        if (Input.GetButtonUp("Fire2"))
+        {
+            anim.SetBool("ADS", false);
+            ads = false;
+        }
+
+        if (Input.GetButton("Fire2") && Input.GetButton("Fire1"))
+        {
+            anim.SetBool("ADS Fire", true);
+        }
+        else
+        {
+            anim.SetBool("ADS Fire", false);
+        }
+
+
+    }
 
     void Shoot()
     {
+        muzzleFlash.Play();
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {

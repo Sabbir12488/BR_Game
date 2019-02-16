@@ -81,7 +81,7 @@ public class playerMovement : MonoBehaviour {
         }
         else
         {
-            profile.batteryDrainRate = 6f;
+            profile.batteryDrainRate = 10f;
         }
 
         Vector3 forwardMove = transform.forward * verInput;  

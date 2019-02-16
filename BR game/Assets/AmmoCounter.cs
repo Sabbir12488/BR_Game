@@ -33,10 +33,6 @@ public class AmmoCounter : MonoBehaviour {
             return; 
         }
 
-        if (PauseMenuScript.GameIsPaused == true)
-        {
-            return;
-        }
 
         displayAmmoCounter.text = currentAmmo.ToString() + " <b>l " + NumberOfLoads.ToString() + " </b> ";
 

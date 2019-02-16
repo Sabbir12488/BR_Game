@@ -19,11 +19,6 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
 
-        if (PauseMenuScript.GameIsPaused == true)
-        {
-            return;
-        }
-
         if (AmmoCounter.reloading == true)
         {
 

@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 
 public class Profile : MonoBehaviour {
-
-// <<<<<<< HEAD
-   
+ 
     //public bool takenDamage = false;
     //public Text deathscreen;
     //public float addedDamaged; 
@@ -17,7 +15,7 @@ public class Profile : MonoBehaviour {
     public float health = 100;
     [SerializeField] private Image healthImage;
     [SerializeField] private Text healthText;
-// >>>>>>> 1c0c7e783668a74a5ee408f682bce743961cd53f
+
 
     [Space]
 
@@ -35,13 +33,10 @@ public class Profile : MonoBehaviour {
     [SerializeField] private Image batteryImage;
     
 
-// <<<<<<< HEAD
-    // Use this for initialization
     void Start () {
         //deathscreen.enabled = false; 
 	}
 	
-	// Update is called once per frame
 
 	void Update () {
 
@@ -71,38 +66,6 @@ public class Profile : MonoBehaviour {
         }
 
 	}
-    /*private void OnCollisionEnter(Collision collision) // fix a bug that is here
-    {
-        if (collision.gameObject.tag == "Enemies")
-        {
-            takenDamage = true;
-            takenDamage = false;
-            shield -= addedDamaged * 8/10;
-
-        }
-        if(collision.gameObject.tag == "Bullets")
-        {
-            takenDamage = true;
-            takenDamage = false;
-            shield -= addedDamaged * 7 / 10;
-
-        }
-        if (takenDamage = true && shield <= 0)
-        {
-            if(collision.gameObject.tag == "Enemies")
-            {
-                health -= addedDamaged * 8 / 10; ; 
-            }
-            if(collision.gameObject.tag == "Bullets")
-            {
-                health -= addedDamaged * 7 / 10; ;
-            }
-
-           
-        }
-
-
-    }*/
 
     void Die()
     {

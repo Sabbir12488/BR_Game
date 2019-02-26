@@ -7,7 +7,7 @@ public class playerMovement : MonoBehaviour {
     [SerializeField] private string horizonlatInputName, verticalInputName;
 
     public float moveSpeed;
-    public float runSpeed;
+    //public float runSpeed;
     public float slopeForce;
     public float slopeForceRayLength;
 
@@ -16,7 +16,7 @@ public class playerMovement : MonoBehaviour {
     public AnimationCurve jumpFallOff;
     public float jumpMultiplier;
     public KeyCode jumpKey;
-    public KeyCode runKey;
+    //public KeyCode runKey;
     private bool isJumping;
     public Transform groundChack;
 
@@ -37,13 +37,13 @@ public class playerMovement : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKey(runKey))
+        /*if (Input.GetKey(runKey))
         {
             moveSpeed = runSpeed;
         }else if (Input.GetKeyUp(runKey))
         {
             moveSpeed = 6f;
-        }
+        }*/
 
         PlayerMovement();
 

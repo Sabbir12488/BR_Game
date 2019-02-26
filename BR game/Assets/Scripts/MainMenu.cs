@@ -9,11 +9,17 @@ public class MainMenu : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // this can be changed by using the build method
     }
+    public void PlayGameSolo()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // this can be changed by using the build method
+    }
 
     public void ExitGame()
     {
         Debug.Log("You have closed the program"); 
         Application.Quit(); // shuts down the program
     }
+
 
 }

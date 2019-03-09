@@ -113,6 +113,102 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &838828
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 19.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 18.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 13.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: healthImage
+      value: 
+      objectReference: {fileID: 29975434}
+    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1199820576}
+    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: shieldImage
+      value: 
+      objectReference: {fileID: 50848814}
+    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: batteryImage
+      value: 
+      objectReference: {fileID: 127347273}
+    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: maxFallForce
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: jumpFallOff.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114162440223723228, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: slopeForceRayLength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 143963101710727426, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 143963101710727426, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 143963101710727426, guid: 620d3ab9a4bc52a4f80b03571c253c84,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4512680915392400, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.011
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &29975432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,73 +1791,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 515258057}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &533752623
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -6.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 2.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069293305577974, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: healthImage
-      value: 
-      objectReference: {fileID: 29975434}
-    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: healthText
-      value: 
-      objectReference: {fileID: 1199820576}
-    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: shieldImage
-      value: 
-      objectReference: {fileID: 50848814}
-    - target: {fileID: 114485528276235734, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: batteryImage
-      value: 
-      objectReference: {fileID: 127347273}
-    - target: {fileID: 143963101710727426, guid: 620d3ab9a4bc52a4f80b03571c253c84,
-        type: 2}
-      propertyPath: m_Center.y
-      value: -0.07
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 620d3ab9a4bc52a4f80b03571c253c84, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &544580037
 GameObject:
   m_ObjectHideFlags: 0

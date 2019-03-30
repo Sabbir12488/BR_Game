@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4214169624167692}
   - component: {fileID: 33521404445127304}
   - component: {fileID: 23646248771162116}
-  - component: {fileID: 114265031095625042}
+  - component: {fileID: 114091110756169292}
   - component: {fileID: 95931842569531158}
   m_Layer: 9
   m_Name: gun
@@ -341,7 +341,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769261599221728}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 19.78, y: 18.66, z: 13.73}
+  m_LocalPosition: {x: 12.5, y: 14.23, z: -16.68}
   m_LocalScale: {x: 0.9990851, y: 1, z: 1.0016136}
   m_Children:
   - {fileID: 4245410908581510}
@@ -369,9 +369,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198518045509584}
-  m_LocalRotation: {x: -0.033304118, y: 0.000000011175868, z: 0.0015334593, w: 0.99944407}
-  m_LocalPosition: {x: 0.213, y: -0.13, z: 0.351}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.5}
+  m_LocalRotation: {x: -0.03330412, y: 0.000000011175869, z: 0.0015334594, w: 0.9994441}
+  m_LocalPosition: {x: 0.2130001, y: -0.13000001, z: 0.35099998}
+  m_LocalScale: {x: 0.100001425, y: 0.10000314, z: 0.5000104}
   m_Children:
   - {fileID: 4336606226487566}
   - {fileID: 4784356419345416}
@@ -381,7 +381,7 @@ Transform:
   - {fileID: 4074183012551040}
   - {fileID: 4713179756896868}
   m_Father: {fileID: 4245410908581510}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -3.8170002, y: -0.006, z: 0.17600001}
 --- !u!4 &4245410908581510
 Transform:
@@ -393,8 +393,8 @@ Transform:
   m_LocalPosition: {x: -0.0231, y: -0.0687, z: 0.4707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4885566298411472}
   - {fileID: 4214169624167692}
+  - {fileID: 4885566298411472}
   m_Father: {fileID: 4069293305577974}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -431,7 +431,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341169463697392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4700001, z: 0}
+  m_LocalPosition: {x: 0, y: 1.011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4910954618584162}
@@ -526,11 +526,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1778769049251892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4245410908581510}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4910954618584162
 Transform:
@@ -1149,6 +1149,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114091110756169292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1198518045509584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b48849a2094a14d82f78697fc15585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  fireRate: 7
+  impactForce: 150
+  impactEffect: {fileID: 1428608810829430, guid: 1710092cd0502364c9e55a60693af2b8,
+    type: 2}
+  anim: {fileID: 95931842569531158}
+  muzzleFlash: {fileID: 198637727532680928}
+  fpsCam: {fileID: 20642279077468824}
 --- !u!114 &114162440223723228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1165,7 +1185,7 @@ MonoBehaviour:
   moveSpeed: 6
   runSpeed: 9
   slopeForce: 10
-  slopeForceRayLength: 5
+  slopeForceRayLength: 10
   jumpFallOff:
     serializedVersion: 2
     m_Curve:
@@ -1194,29 +1214,9 @@ MonoBehaviour:
   jumpKey: 32
   runKey: 304
   groundChack: {fileID: 4037119464683576}
-  maxFallForce: 18
+  maxFallForce: 26
   baseFallDamage: 3
   fallForce: 0
---- !u!114 &114265031095625042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1198518045509584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b48849a2094a14d82f78697fc15585, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  range: 100
-  fireRate: 7
-  impactForce: 150
-  impactEffect: {fileID: 1428608810829430, guid: 1710092cd0502364c9e55a60693af2b8,
-    type: 2}
-  anim: {fileID: 95931842569531158}
-  muzzleFlash: {fileID: 198637727532680928}
-  fpsCam: {fileID: 20642279077468824}
 --- !u!114 &114485528276235734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1287,12 +1287,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.7
+  m_Radius: 0.8
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.2, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198637727532680928
 ParticleSystem:
   m_ObjectHideFlags: 1

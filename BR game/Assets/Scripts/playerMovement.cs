@@ -37,6 +37,7 @@ public class playerMovement : MonoBehaviour {
 
     private void Update()
     {
+        
         if (Input.GetKey(runKey))
         {
             moveSpeed = runSpeed;
